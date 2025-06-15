@@ -78,6 +78,33 @@ It includes MySQL with phpMyAdmin, Redis with RedisInsight, and a monitoring sui
 
 ---
 
+## MySQL Exporter User Setup
+
+To allow Prometheus to collect MySQL metrics using `mysqld_exporter`, you must create a user with proper permissions inside the MySQL server:
+
+```sql
+CREATE USER 'exporter'@'%' IDENTIFIED BY 'exporter_pass';
+GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'exporter'@'%';
+FLUSH PRIVILEGES;
+```
+
+Make sure the `exporter/.my.cnf` file contains the correct credentials:
+
+```ini
+[client]
+user=exporter
+password=exporter_pass
+host=mysql
+```
+
+Then restart the exporter container:
+
+```bash
+docker-compose restart mysqld_exporter
+```
+
+---
+
 ## Customization
 
 - Modify environment variables (e.g., passwords, database names) in the `docker-compose.yml` file.
