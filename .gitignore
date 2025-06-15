@@ -1,11 +1,6 @@
 /data/grafana/*
-!/data/grafana/README.md
-
 /data/mysql/*
-!/data/mysql/README.md
-
 /data/redis/*
-!/data/redis/README.md
 
 .env
 env
