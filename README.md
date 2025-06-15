@@ -59,7 +59,7 @@ It includes MySQL with phpMyAdmin, PostgreSQL with pgAdmin, Redis with RedisInsi
 3. Start the services:
 
     ```bash
-    docker-compose up -d
+    docker compose up -d
     ```
 
 ---
@@ -156,7 +156,7 @@ host=mysql
 Then restart the exporter container:
 
 ```bash
-docker-compose restart mysqld_exporter
+docker compose restart mysqld_exporter
 ```
 
 ---

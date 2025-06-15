@@ -1,6 +1,7 @@
 /data/grafana/*
 /data/mysql/*
 /data/redis/*
+/data/postgres/*
 
 .env
 env
@@ -9,6 +10,7 @@ env
 venv
 .venv
 
+/logs
 .logs
 .log
 
